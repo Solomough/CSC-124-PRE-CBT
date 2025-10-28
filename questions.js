@@ -784,9 +784,393 @@ const allQuestions = [
         [cite_start]explanation: "John and Mary are married (meaning 1: John and Mary are married to each other; meaning 2: John and Mary are married, but not necessarily to each other)[cite: 15].",
     },
     {
-        topic: "Informal Logic",
+        topic:"Informal Logic",
         question: "If a conjunction $\phi \land \psi$ is false, which of the following MUST be true about the components?",
         options: [
             "Both $\phi$ and $\psi$ are false.",
             "At least one of $\phi$ or $\psi$ is false.",
             "$\phi$ is true and $\psi$ is false.",
+            "The conjunction is a molecular formula."
+        ],
+        answer: "At least one of $\phi$ or $\psi$ is false.",
+        explanation: "A conjunction is true if both of its conjuncts are true. [cite_start]Therefore, it is false if at least one of its conjuncts is false[cite: 10].",
+    },
+    {
+        topic: "Informal Logic",
+        question: "True or False: In First-Order Logic, a statement like 'every natural number is an integer' is no longer considered atomic.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "True",
+        explanation: "In first-order logic... we have additional logical connectives called quantifiers that can be used to construct 'every natural number is an integer' from smaller propositions. [cite_start]Therefore, it is not atomic in first-order logic[cite: 14].",
+    },
+    {
+        topic: "Informal Logic",
+        question: "In the context of the notes, when is the equivalence 'It is raining if and only if it is snowing' true if 'It is raining' is false and 'It is snowing' is false?",
+        options: [
+            "True, because they have the same truth value (both false).",
+            "False, because both are false.",
+            "False, because there is no logical connection.",
+            "It is vacuously true."
+        ],
+        answer: "True, because they have the same truth value (both false).",
+        [cite_start]explanation: "An equivalence is true if $\phi$ and $\psi$ have the same truth value (both false or both true)[cite: 14]. [cite_start]The example in the text shows this exact case: 'It is raining if and only if it is snowing' is true because both are false[cite: 14].",
+    },
+    // --- Chapter 3: Formal Syntax of Propositional Logic (40 Questions) ---
+    {
+        topic: "Formal Syntax",
+        question: "By **syntax** in the context of Propositional Logic, what is generally understood?",
+        options: [
+            "The truth-value assignment of a formula.",
+            "The set of rules for writing correctly.",
+            "The translation from natural language to formal language.",
+            "The proof system for deriving valid sequents."
+        ],
+        answer: "The set of rules for writing correctly.",
+        [cite_start]explanation: "By syntax we generally understand a set of rules for writing correctly[cite: 17].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is an **alphabet** in computer science, as defined in the notes?",
+        options: [
+            "A finite set of variables.",
+            "A set whose elements are used to make up words.",
+            "A recursive set of symbols and connectives.",
+            "The set of all possible well-formed formulae."
+        ],
+        answer: "A set whose elements are used to make up words.",
+        explanation: "A set is called an alphabet in computer science if we use the elements of the set to make up words. [cite_start]The elements of an alphabet are called symbols[cite: 17].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is a **word** over an alphabet?",
+        options: [
+            "A single symbol from the alphabet.",
+            "A finite set of symbols in the alphabet.",
+            "A sequence of symbols in the alphabet.",
+            "A sequence that forms a well-formed formula."
+        ],
+        answer: "A sequence of symbols in the alphabet.",
+        [cite_start]explanation: "A word over an alphabet is a sequence of symbols in the alphabet[cite: 17].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The alphabet of Propositional Logic ($\mathcal{L}$) is the union of which three categories of sets?",
+        options: [
+            "Propositional variables, quantifiers, and predicates.",
+            "Logical connectives, truth values, and auxiliary symbols.",
+            "Propositional variables, logical connectives, and auxiliary symbols.",
+            "Atomic formulae, molecular formulae, and parentheses."
+        ],
+        answer: "Propositional variables, logical connectives, and auxiliary symbols.",
+        [cite_start]explanation: "The alphabet of propositional logic ($\mathcal{L}$) is the union of the set of propositional variables ($\mathcal{A}$), the set of logical connectives ($\{\neg, \land, \lor\}$), and the set of auxiliary symbols ($\{(, )\}$)[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The set of **propositional variables** ($\mathcal{A}$) in the alphabet of Propositional Logic is defined as:",
+        options: [
+            "Finite and containing only 'p' and 'q'.",
+            "An infinite set that we fix from the very beginning.",
+            "The set of all atomic propositions.",
+            "The set of all capital English letters."
+        ],
+        answer: "An infinite set that we fix from the very beginning.",
+        explanation: "The propositional variables $\mathcal{A} = \{p, q, r, p_0, q_1, . . [cite_start].\}$ is an infinite set that we fix from the very beginning[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which symbols form the set of **logical connectives** in the minimal alphabet of Propositional Logic?",
+        options: [
+            "$\{\neg, \land, \lor, \rightarrow, \leftrightarrow\}$",
+            "$\{\neg, \land, \lor\}$",
+            "$\{(, ), \rightarrow, \leftrightarrow\}$",
+            "$\{\land, \lor, \rightarrow\}$"
+        ],
+        answer: "$\{\neg, \land, \lor\}$",
+        [cite_start]explanation: "The set of logical connectives is $\{\neg, \land, \lor\}$[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The set of propositional formulae ($\mathcal{PL}$) is the **smallest** set of words over $\mathcal{L}$ satisfying certain conditions. This is known as a(n):",
+        options: [
+            "Structural proof.",
+            "Minimality constraint.",
+            "Proof by contradiction.",
+            "Unique readability theorem."
+        ],
+        answer: "Minimality constraint.",
+        [cite_start]explanation: "Another important part of an inductive definition is the minimality constraint, which says that nothing other than what is provable by the base case(s) and the inductive case(s) belongs to the set[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the **Base Case** in the inductive definition of Propositional Formulae ($\mathcal{PL}$)?",
+        options: [
+            "If $\phi \in \mathcal{PL}$, then $\neg \phi \in \mathcal{PL}$.",
+            "Any propositional variable is in $\mathcal{PL}$.",
+            "If $\phi_1, \phi_2 \in \mathcal{PL}$, then $(\phi_1 \land \phi_2) \in \mathcal{PL}$.",
+            "The empty word $\epsilon$ is in $\mathcal{PL}$."
+        ],
+        answer: "Any propositional variable is in $\mathcal{PL}$.",
+        [cite_start]explanation: "Base Case: Any propositional variable, seen as a 1-symbol word, is in $\mathcal{PL}$ (equivalently, $\mathcal{A} \subseteq \mathcal{PL}$)[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which of the following is an example of an **Inductive Step** in the definition of $\mathcal{PL}$?",
+        options: [
+            "If $\phi \in \mathcal{PL}$, then $(\phi \rightarrow \psi) \in \mathcal{PL}$.",
+            "If $\phi \in \mathcal{PL}$, then $\neg \phi \in \mathcal{PL}$.",
+            "If $p \in \mathcal{A}$, then $p \in \mathcal{PL}$.",
+            "If $\phi$ is a word, then $\phi \in \mathcal{PL}$."
+        ],
+        answer: "If $\phi \in \mathcal{PL}$, then $\neg \phi \in \mathcal{PL}$.",
+        explanation: "Inductive Step i. [cite_start]If $\phi \in \mathcal{PL}$, then $\neg \phi \in \mathcal{PL}$[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which of the following words is **NOT** a well-formed formula ($\mathcal{PL}$), based on the minimal inductive definition provided?",
+        options: [
+            "$\neg(p \lor q)$",
+            "$(p \land q)$",
+            "$q \land \neg p$",
+            "$p$"
+        ],
+        answer: "$q \land \neg p$",
+        [cite_start]explanation: "Examples of words not in PL include: $q \land \neg p$[cite: 19]. This is because binary connectives require parentheses around the resulting formula, i.e., it should be $(q \land \neg p)$ to be well-formed.",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "A formula that consists of a single propositional variable is called a(n):",
+        options: [
+            "Molecular formula",
+            "WFF",
+            "Atomic formula",
+            "Sequent"
+        ],
+        answer: "Atomic formula",
+        [cite_start]explanation: "A formula that consists of a single propositional variable, such as $p$ or $q$, is called an atomic formula[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The letter '$\mathcal{A}$' for the set of propositional variables stands for:",
+        options: [
+            "Alphabet",
+            "Argument",
+            "Atomic",
+            "Auxiliary"
+        ],
+        answer: "Atomic",
+        [cite_start]explanation: "This explains why the set $\mathcal{A}$ of propositional variables is called $\mathcal{A}$ ($\mathcal{A}$ stands for atomic)[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "How is the **main connective** of a molecular formula determined?",
+        options: [
+            "It is always the first connective in the formula.",
+            "It is the connective with the highest precedence.",
+            "It is given by the last inference in its construction tree.",
+            "It is the connective that occurs most frequently."
+        ],
+        answer: "It is given by the last inference in its construction tree.",
+        [cite_start]explanation: "Each molecular formula has a main connective, which is given by the last inference in its construction tree[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the main connective of the formula $\neg(p \lor q)$?",
+        options: [
+            "$\lor$",
+            "$\neg$",
+            "$p$",
+            "$"
+        ],
+        answer: "$\neg$",
+        [cite_start]explanation: "The main connective of the formula $\neg(p \lor q)$ is $\neg$ (the negation), as it was the last operation (Inductive Case i) used in its construction[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the main connective of the formula $(\neg p \lor q)$?",
+        options: [
+            "$\lor$",
+            "$\neg$",
+            "$p$",
+            "$"
+        ],
+        answer: "$\lor$",
+        [cite_start]explanation: "The main connective of the formula $(\neg p \lor q)$, is $\lor$ (the disjunction), as it was the last operation (Inductive Case iii) used in its construction[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "A formula whose main connective is $\land$ is called a:",
+        options: [
+            "Negation",
+            "Disjunction",
+            "Conjunction",
+            "Equivalence"
+        ],
+        answer: "Conjunction",
+        [cite_start]explanation: "We call formulae whose main connective is $\land$ conjunctions[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "A word belongs to $\mathcal{PL}$ if and only if there is a(n) $\_ \_ \_ \_ \_ \_ \_ \_ \_ \_$ for it.",
+        options: [
+            "Truth table.",
+            "Formal proof.",
+            "Construction tree.",
+            "Boolean algebra."
+        ],
+        answer: "Construction tree.",
+        [cite_start]explanation: "It is easy to see that a word belongs to $\mathcal{PL}$ iff there is a construction tree for it[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "In the context of the construction tree, what is a single line called, where below the line is the conclusion and above the line are the hypotheses?",
+        options: [
+            "A sequent",
+            "An axiom",
+            "An inference",
+            "A literal"
+        ],
+        answer: "An inference",
+        [cite_start]explanation: "Each line is called an inference; below each line is the conclusion of the inference and above the lines are the hypotheses[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What property of the definition of formulae ensures that any propositional formula can be read unambiguously?",
+        options: [
+            "The Minimality Constraint",
+            "Structural Induction",
+            "The Unique Readability Theorem",
+            "The Associativity Law"
+        ],
+        answer: "The Unique Readability Theorem",
+        [cite_start]explanation: "The Unique Readability Theorem... essentially says that any propositional formula can be read unambiguously[cite: 22].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the **meta-language** used in the lecture notes to communicate about the object of study?",
+        options: [
+            "Propositional Logic ($\mathcal{PL}$)",
+            "English",
+            "Mathematics",
+            "The sans-serif blue font"
+        ],
+        answer: "English",
+        [cite_start]explanation: "The object language is the language that we study ($\mathcal{PL}$), and the meta-language is the language that we use to perform the study (English)[cite: 22].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The **object-language** in the course is:",
+        options: [
+            "First-Order Logic ($\mathcal{FOL}$)",
+            "The set theory used for proofs.",
+            "Natural language (English).",
+            "The language of Propositional Logic ($\mathcal{PL}$)."
+        ],
+        answer: "The language of Propositional Logic ($\mathcal{PL}$).",
+        [cite_start]explanation: "The object language is the language that we study ($\mathcal{PL}$)... The object language is the language that represents the object of our study (in our case, propositional logic)[cite: 22].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "True or False: The word $p + q$ is a well-formed formula in $\mathcal{PL}$.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        [cite_start]explanation: "The word $p + q$ is listed as an example of a word not in $\mathcal{PL}$ because the symbol $+$ is not in the alphabet $\mathcal{L}$[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "True or False: The word $p p$ is a well-formed formula in $\mathcal{PL}$.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        explanation: "The word $p p$ is listed as an example of a word not in $\mathcal{PL}$. [cite_start]It is a sequence of symbols, but it does not follow the inductive rules (it is not a propositional variable, and none of the inductive steps apply)[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which of the following describes the correct typography convention for elements in the **object language**?",
+        options: [
+            "Regular black font.",
+            "Written in sans-serif blue font.",
+            "Written in bold, red font.",
+            "Enclosed in double quotes."
+        ],
+        answer: "Written in sans-serif blue font.",
+        [cite_start]explanation: "All elements in the object language are written in sans-serif blue font (for example, $(p \land q)$)[cite: 22].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "In the context of the formal definition, the word $p$ is an example of a word over $\mathcal{L}$ because:",
+        options: [
+            "It is a formula.",
+            "It is a sequence of symbols in the alphabet.",
+            "It is not ambiguous.",
+            "It has a main connective."
+        ],
+        answer: "It is a sequence of symbols in the alphabet.",
+        explanation: "Words, or strings, are simply sequences of symbols of the alphabet $\mathcal{L}$. [cite_start]'p' is a sequence of one symbol from the alphabet[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "If $\phi$ is a word, and $\phi$ is *not* a propositional variable, then for $\phi$ to be in $\mathcal{PL}$, it must satisfy one of the conditions of the:",
+        options: [
+            "Base Case.",
+            "Minimality Constraint.",
+            "Unique Readability Theorem.",
+            "Inductive Step."
+        ],
+        answer: "Inductive Step.",
+        [cite_start]explanation: "The definition of $\mathcal{PL}$ is structured by a Base Case (atomic) and Inductive Steps (molecular, built from smaller formulae)[cite: 18, 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What would the fully parenthesized form of the non-well-formed word $\neg p \lor q$ need to be to avoid syntactic ambiguity (assuming negation has higher precedence than disjunction)?",
+        options: [
+            "$\neg(p \lor q)$",
+            "$(\neg p \lor q)$",
+            "$\neg (p) \lor q$",
+            "$(p \lor \neg q)$"
+        ],
+        answer: "$(\neg p \lor q)$",
+        explanation: "The discussion on Unique Readability shows that $\neg p \lor q$ is ambiguous. [cite_start]If negation has precedence, it is read as $(\neg p) \lor q$, but the formal definition requires parentheses around binary connectives, so the correct well-formed formula would be $(\neg p \lor q)$ (from $\phi_1=\neg p$ and $\phi_2=q$)[cite: 22, 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The use of parentheses in $\mathcal{PL}$ is explicitly mandated to achieve what key property, as discussed in the context of avoiding natural language issues?",
+        options: [
+            "Computational efficiency.",
+            "Semantic completeness.",
+            "Syntactic precision (Unique Readability).",
+            "The soundness of the logic."
+        ],
+        answer: "Syntactic precision (Unique Readability).",
+        explanation: "Avoiding such syntactic ambiguities was the main reason why we left natural language and began studying formal logic. [cite_start]The formal syntax (including parentheses) ensures Unique Readability[cite: 22, 15].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "If a formula $\phi$ is constructed from $\phi_1$ and $\phi_2$ using the Inductive Step ii, the resulting formula is:",
+        options: [
+            "$\neg \phi_1$",
+            "$(\phi_1 \lor \phi_2)$",
+            "$(\phi_1 \land \phi_2)$",
+            "$\phi_1 \rightarrow \phi_2$"
+        ],
+        answer: "$(\phi_1 \land \phi_2)$",
+        explanation: "Inductive Step ii. [cite_start]If $\phi_1, \phi_2 \in \mathcal{PL}$, then $(\phi_1 \land \phi_2) \in \mathcal{PL}$ (conjunction)[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "In the construction proof for $\neg(p \lor q) \in \mathcal{PL}$, what is the final step/inference?",
+        options: [
+            "Base Case: $p \in \mathcal{PL}$.",
+            "Inductive Case iii: $(p \lor q) \in \mathcal{PL}$.",
+            "Inductive Case i: $\neg(p \lor q) \in \mathcal{PL}$.",
+            "Inductive Case ii: $(\neg p \land \neg q) \in \mathcal{PL}$."
+        ],
+        answer: "Inductive Case i: $\neg(p \lor q) \in \mathcal{PL}$.",
+        [cite_start]explanation: "The last step in the construction tree for $\neg(p \lor q)$ is applying the negation rule (Inductive Case i) to the subformula $(p \lor q)$[cite: 19].",
+    
