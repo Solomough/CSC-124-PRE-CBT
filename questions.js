@@ -1193,4 +1193,20 @@ const allQuestions = [
             "Decidability (termination) and efficient resolution.",
             "A mix of positive and negative literals.",
             "Turing completeness."
-        ]
+        ],
+        answer: "Decidability (termination) and efficient resolution.",
+        explanation: "Horn clauses allow for highly focused and efficient resolution strategies (like SLD-resolution), which is critical for making logic programming practical."
+    },
+    {
+        topic: "Chapter 5: Logic Programming",
+        question: "In the rule `eligible(X) :- student(X), good_grades(X).`, if the Prolog interpreter attempts to prove `eligible(mary)`, what is the next goal it tries to prove?",
+        options: [
+            "eligible(X)",
+            "good_grades(mary)",
+            "student(mary)",
+            "The program terminates."
+        ],
+        answer: "student(mary)",
+        explanation: "Prolog uses Depth-First Search, solving the subgoals in the body from left to right. It will first attempt to find a fact or rule proving `student(mary)`."
+    }
+];
