@@ -1946,4 +1946,379 @@ const allQuestions = [
             "$\phi$ is not satisfiable."
         ],
         answer: "$\phi$ is not satisfiable.",
-        [cite_start]explanation: "A contradiction is a formula that is false in ev
+        [cite_start]explanation: "A contradiction is a formula that is false in every possible assignment, meaning it has no model, and is therefore not satisfiable[cite: 37, 36].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "A set of formulae $\Gamma$ is **consistent** if, by definition:",
+        options: [
+            "There exists at least one assignment $\tau$ such that $\tau \models \psi$ for all $\psi \in \Gamma$.",
+            "It is a set of valid formulae.",
+            "It is a set of satisfiable formulae.",
+            "It is not a logical consequence of the empty set."
+        ],
+        answer: "There exists at least one assignment $\tau$ such that $\tau \models \psi$ for all $\psi \in \Gamma$.",
+        [cite_start]explanation: "A set of formulae $\Gamma$ is consistent if there exists at least one assignment $\tau$ that is a model of all formulae in $\Gamma$ (i.e., for all $\psi \in \Gamma$, $\tau \models \psi$)[cite: 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "The generalized relation between implications and logical consequence states that $\phi_1, \ldots, \phi_n \models \phi$ if and only if which formula is valid?",
+        options: [
+            "$(\phi_1 \lor \ldots \lor \phi_n) \rightarrow \phi$",
+            "$(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$",
+            "$\phi \rightarrow (\phi_1 \land \ldots \land \phi_n)$",
+            "$\phi_1 \leftrightarrow \ldots \leftrightarrow \phi_n$"
+        ],
+        answer: "$(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$",
+        explanation: "Theorem 77 states that $\phi_1, \ldots, \phi_n \models \phi$ if and only if the formula $((( \phi_1 \land \phi_2) \land \ldots) \land \phi_n) \rightarrow \phi$ is valid. [cite_start]This simplifies to $(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$[cite: 46].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "The relation between double implication and semantic equivalence states that $\phi_1 \equiv \phi_2$ if and only if which formula is valid?",
+        options: [
+            "$\phi_1 \rightarrow \phi_2$",
+            "$\phi_1 \leftrightarrow \phi_2$",
+            "$\phi_1 \land \phi_2$",
+            "$\phi_1 \lor \phi_2$"
+        ],
+        answer: "$\phi_1 \leftrightarrow \phi_2$",
+        [cite_start]explanation: "Theorem 78 states that $\phi_1 \equiv \phi_2$ if and only if the formula $(\phi_1 \leftrightarrow \phi_2)$ is valid[cite: 46].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Given an assignment $\tau$ where $\tau(p)=1$ and $\tau(q)=0$, what is the truth value of the formula $(p \land q)$?",
+        options: [
+            "1",
+            "0",
+            "Undefined",
+            "Contingent"
+        ],
+        answer: "0",
+        [cite_start]explanation: "$\hat{\tau}(p \land q) = \hat{\tau}(p) \cdot \hat{\tau}(q) = 1 \cdot 0 = 0$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Given an assignment $\tau$ where $\tau(p)=1$ and $\tau(q)=0$, what is the truth value of the formula $\neg(p \land q)$?",
+        options: [
+            "1",
+            "0",
+            "Undefined",
+            "Contingent"
+        ],
+        answer: "1",
+        [cite_start]explanation: "$\hat{\tau}(\neg(p \land q)) = 1 - \hat{\tau}(p \land q) = 1 - (1 \cdot 0) = 1 - 0 = 1$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Which of the following formulae is a **contradiction**?",
+        options: [
+            "$(p \lor \neg p)$",
+            "$(p \land p)$",
+            "$(p \land \neg p)$",
+            "$\neg \neg p$"
+        ],
+        answer: "$p \land \neg p$",
+        [cite_start]explanation: "$p \land \neg p$ is false in every assignment, making it a contradiction[cite: 41].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "The formula $(p \lor \neg p)$ is an example of a:",
+        options: [
+            "Contradiction.",
+            "Contingent formula.",
+            "Valid formula (Tautology).",
+            "Unsatisfiable formula."
+        ],
+        answer: "Valid formula (Tautology).",
+        [cite_start]explanation: "$p \lor \neg p$ is true in every assignment (Law of Excluded Middle), making it a valid formula[cite: 41].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If a formula $\phi$ is valid, then $\neg \phi$ must be:",
+        options: [
+            "Contingent.",
+            "Satisfiable.",
+            "A tautology.",
+            "A contradiction."
+        ],
+        answer: "A contradiction.",
+        [cite_start]explanation: "If $\phi$ is true in all assignments, $\neg \phi$ must be false in all assignments, making it a contradiction[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "To show that $\Gamma \not\models \phi$ (i.e., $\phi$ is **not** a logical consequence of $\Gamma$), what is sufficient to find?",
+        options: [
+            "A proof that $\phi$ is unsatisfiable.",
+            "An assignment that is a model of $\phi$ but not of $\Gamma$.",
+            "An assignment that is a model of $\Gamma$ but not of $\phi$.",
+            "A proof that $\Gamma$ is consistent."
+        ],
+        answer: "An assignment that is a model of $\Gamma$ but not of $\phi$.",
+        [cite_start]explanation: "To show an 'unconsequence', it is sufficient to find a model of the premises $\Gamma$ that is not a model of the conclusion $\phi$[cite: 38].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the key application of semantic equivalence in computer science mentioned in the notes?",
+        options: [
+            "Determining if two programs have the same behavior.",
+            "Calculating the size of the Abstract Syntax Tree.",
+            "Establishing the consistency of a set of clauses.",
+            "Proving the Unique Readability Theorem."
+        ],
+        answer: "Determining if two programs have the same behavior.",
+        [cite_start]explanation: "The example (Example 56) uses semantic equivalence ($\equiv$) to check if two formulae (representing two programs) have the same behavior[cite: 41].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "A set of formulae $\Gamma$ that is **not** consistent is called:",
+        options: [
+            "Valid.",
+            "Contingent.",
+            "Inconsistent.",
+            "Unsatisfiable."
+        ],
+        answer: "Inconsistent.",
+        [cite_start]explanation: "A set of formulae $\Gamma$ is inconsistent if it is not consistent[cite: 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "True or False: If a formula $\phi$ is satisfiable, it must also be valid.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        explanation: "A contingent formula is satisfiable (true in at least one assignment) but not valid (false in at least one assignment). [cite_start]Example: $p$ is satisfiable but not valid[cite: 36, 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the truth value of the nullary logical connective **$\bot$** (bottom/falsehood) in any assignment $\tau$?",
+        options: [
+            "1",
+            "0",
+            "The truth value of $p$.",
+            "Undefined"
+        ],
+        answer: "0",
+        explanation: "$\bot$ is a nullary logical connective (it has arity 0)... The semantics of $\bot$ is that it is false in any assignment. [cite_start]In other words, $\bot$ is a contradiction[cite: 60].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If a set of formulae $\Gamma$ is inconsistent, what is the intersection of all its models?",
+        options: [
+            "The universal set $\mathcal{A}$.",
+            "The empty set $\emptyset$.",
+            "The set of all valid formulae.",
+            "The set of all contingent formulae."
+        ],
+        answer: "The empty set $\emptyset$.",
+        [cite_start]explanation: "An inconsistent set has no models (no assignment $\tau$ satisfies all its formulae), so the set of its models is the empty set[cite: 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What does the notation $\models \phi$ represent?",
+        options: [
+            "$\phi$ is satisfiable.",
+            "$\phi$ is a logical consequence of $\neg \phi$.",
+            "$\phi$ is a logical consequence of the empty set (i.e., $\phi$ is valid).",
+            "$\phi$ is a contradiction."
+        ],
+        answer: "$\phi$ is a logical consequence of the empty set (i.e., $\phi$ is valid).",
+        explanation: "When $n=0$, the notation $\Gamma \models \phi$ allows us to write $\models \phi$ instead of $\{\} \models \phi$. [cite_start]This is consistent with the notation for validity[cite: 38].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi$ is a valid formula, how many assignments $\tau$ satisfy $\phi$?",
+        options: [
+            "None.",
+            "Exactly one.",
+            "All possible assignments.",
+            "At least one, but not all."
+        ],
+        answer: "All possible assignments.",
+        [cite_start]explanation: "A formula $\phi$ is valid if it is true in every possible assignment[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Which formula is an example of a **contingent formula**?",
+        options: [
+            "$(p \lor \neg p)$",
+            "$(p \land \neg p)$",
+            "$(p \land q)$",
+            "$(p \rightarrow p)$"
+        ],
+        answer: "$(p \land q)$",
+        explanation: "The formula $(p \land q)$ is true when $p=1, q=1$ and false when $p=0, q=0$. [cite_start]It is neither always true (valid) nor always false (contradiction), so it is contingent[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the truth value of the formula $\neg \neg q$ in a truth assignment $\tau$ where $\tau(q)=0$?",
+        options: [
+            "1",
+            "0",
+            "Undefined",
+            "Contingent"
+        ],
+        answer: "0",
+        explanation: "$\hat{\tau}(\neg \neg q) = 1 - \hat{\tau}(\neg q) = 1 - (1 - \hat{\tau}(q)) = \hat{\tau}(q)$. [cite_start]Since $\hat{\tau}(q) = \tau(q) = 0$, the final truth value is 0[cite: 35].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi_1 \equiv \phi_2$, what does this imply about their logical consequences?",
+        options: [
+            "$\phi_1 \models \phi_2$ but $\phi_2 \not\models \phi_1$.",
+            "$\phi_1 \models \phi_2$ and $\phi_2 \models \phi_1$.",
+            "$\phi_1$ is satisfiable and $\phi_2$ is not.",
+            "$\phi_1$ and $\phi_2$ must be contingent."
+        ],
+        answer: "$\phi_1 \models \phi_2$ and $\phi_2 \models \phi_1$.",
+        [cite_start]explanation: "Semantic equivalence means they have the same truth value in every assignment, which is equivalent to saying each is a logical consequence of the other ($\phi_1 \equiv \phi_2$ iff $\phi_1 \leftrightarrow \phi_2$ is valid, and $\phi_1 \leftrightarrow \phi_2$ is valid iff $\phi_1 \models \phi_2$ and $\phi_2 \models \phi_1$)[cite: 37, 46].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "To establish a logical consequence $\phi_1, \ldots, \phi_n \models \phi$, one can prove the validity of the formula:",
+        options: [
+            "$\phi \rightarrow (\phi_1 \land \ldots \land \phi_n)$",
+            "$\phi_1 \land \ldots \land \phi_n$",
+            "$(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$",
+            "$\phi \land \neg (\phi_1 \land \ldots \land \phi_n)$"
+        ],
+        answer: "$(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$",
+        [cite_start]explanation: "Theorem 77 states that $\phi_1, \ldots, \phi_n \models \phi$ if and only if $(\phi_1 \land \ldots \land \phi_n) \rightarrow \phi$ is valid[cite: 46].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "True or False: If $\phi$ is satisfiable, the set $\{\phi\}$ is consistent.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "True",
+        explanation: "A formula $\phi$ is satisfiable if it has at least one model. A set $\{\phi\}$ is consistent if there is at least one assignment $\tau$ that is a model of all formulae in the set. [cite_start]Thus, if $\phi$ is satisfiable, $\{\phi\}$ is consistent[cite: 36, 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the purpose of **translating propositions from English into PL**?",
+        options: [
+            "To prove the completeness of the logic.",
+            "To simplify the language for a general audience.",
+            "Clarifying meaning by eliminating possible syntactical ambiguities.",
+            "Establishing the identity of the atomic propositions."
+        ],
+        answer: "Clarifying meaning by eliminating possible syntactical ambiguities.",
+        [cite_start]explanation: "The purpose of this modeling could be: clarifying the meaning of a proposition by eliminating possible syntactical ambiguities, checking whether the proposition is valid, etc[cite: 47].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the first step when translating an English proposition into $\mathcal{PL}$?",
+        options: [
+            "Identify the logical connectives and their order.",
+            "Identify the main connective.",
+            "Identifying the atomic propositions and associating propositional variables to them.",
+            "Determining the truth value of the English proposition."
+        ],
+        answer: "Identifying the atomic propositions and associating propositional variables to them.",
+        [cite_start]explanation: "The first step is to identify the atomic propositions and associating propositional variables to them[cite: 47].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "In the translation process, which of the following is true regarding connectives and atomic propositions?",
+        options: [
+            "Connectives must be part of the atomic propositions.",
+            "The word 'if' must be included in the atomic proposition.",
+            "The connectives themselves are not part of the atomic propositions.",
+            "Only one propositional variable can be used for a translation."
+        ],
+        answer: "The connectives themselves are not part of the atomic propositions.",
+        explanation: "Pay attention! The connectives themselves are not part of the atomic propositions. [cite_start]For example, the third atomic proposition is not if the subject is interesting[cite: 48].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If a formula is a conjunction of several formulae, what is the value of $\hat{\tau}$ for that conjunction if only one component is $\hat{\tau}$-false?",
+        options: [
+            "1",
+            "0",
+            "Contingent",
+            "Undefined"
+        ],
+        answer: "0",
+        explanation: "Conjunction is defined as $\hat{\tau}(\phi_1 \land \phi_2) = \hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2)$. [cite_start]If any component is 0 (false), the entire product is 0 (false)[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "What is the term for the function that computes the truth value of a formula $\phi$ in an assignment $\tau$?",
+        options: [
+            "The interpretation $\tau$.",
+            "The size function.",
+            "The extended truth assignment $\hat{\tau}$.",
+            "The Boolean function $\mathbb{B}$."
+        ],
+        answer: "The extended truth assignment $\hat{\tau}$.",
+        [cite_start]explanation: "The truth value of a formula in an assignment is denoted $\hat{\tau}(\phi)$, which is the extension of the truth assignment $\tau$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If a proposition occurs several times, even if using different words, what must be done to ensure an accurate translation?",
+        options: [
+            "Associate a new propositional variable to each occurrence.",
+            "Ignore all but the first occurrence.",
+            "Associate the same propositional variable to all occurrences.",
+            "Use a different logical connective for each occurrence."
+        ],
+        answer: "Associate the same propositional variable to all occurrences.",
+        [cite_start]explanation: "For an accurate translation, if a proposition occurs several times (even if it does not use exactly the same words), we should associate to all of its occurences the same propositional variable[cite: 48].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "The formula $(p \land \neg q) \lor q$ is satisfiable. What does this mean about the set $\{(p \land \neg q) \lor q\}$?",
+        options: [
+            "It is inconsistent.",
+            "It is contingent.",
+            "It is consistent.",
+            "It is valid."
+        ],
+        answer: "It is consistent.",
+        explanation: "If a formula is satisfiable, there is an assignment that makes it true. [cite_start]An assignment that makes a formula true is a model for the set containing only that formula, making the set consistent[cite: 36, 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Given $\Gamma = \{p, \neg p\}$, is $\Gamma$ consistent?",
+        options: [
+            "Yes, because both $p$ and $\neg p$ are satisfiable individually.",
+            "No, because there is no assignment $\tau$ that is a model for both $p$ and $\neg p$.",
+            "Yes, because the set has a finite number of formulae.",
+            "No, because the set contains only one propositional variable."
+        ],
+        answer: "No, because there is no assignment $\tau$ that is a model for both $p$ and $\neg p$.",
+        explanation: "A set is consistent if there is a model for all its formulae. [cite_start]There is no assignment that makes $p$ true and $\neg p$ true simultaneously, so the set is inconsistent[cite: 39].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If an assignment $\tau$ is not a model of a formula $\phi$, it is written as:",
+        options: [
+            "$\tau \in \phi$",
+            "$\tau \models \phi$",
+            "$\tau \not\models \phi$",
+            "$\hat{\tau}(\phi) = 1$"
+        ],
+        answer: "$\tau \not\models \phi$",
+        [cite_start]explanation: "We write $\tau \not\models \phi$ (and we read: $\tau$ is not a model of the formula $\phi$; or: $\tau$ does not satisfy $\phi$) iff $\hat{\tau}(\phi) = 0$[cite: 36].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi_1 \equiv \phi_2$, then $\neg \phi_1$ is equivalent to:",
+        options: [
+            "$\phi_2$",
+            "$\neg \phi_2$",
+            "$\phi_1 \land \phi_2$",
+            "$\phi_1 \lor \phi_2$"
+        ],
+        answer: "$\neg \phi_2$",
+        [cite_start]explanation: "If two formulae are equivalent, their negations must also be equivalent, as they will have the same truth value in every assignment[cite: 37].",
+    },
+];
+
+// NOTE: This array contains 200 questions (40 for each of the first five chapters of Logic for Computer Science).
+The 200 questions for the Logic for Computer Science handout are ready, structured into chapters and topics.
+
+Please provide the 40 Set Theory questions (Handout 1) now, and I will combine all 240 questions into the complete questions.js f
