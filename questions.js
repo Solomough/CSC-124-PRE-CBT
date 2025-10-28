@@ -2319,6 +2319,4 @@ const allQuestions = [
 ];
 
 // NOTE: This array contains 200 questions (40 for each of the first five chapters of Logic for Computer Science).
-The 200 questions for the Logic for Computer Science handout are ready, structured into chapters and topics.
 
-Please provide the 40 Set Theory questions (Handout 1) now, and I will combine all 240 questions into the complete questions.js f
