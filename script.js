@@ -110,7 +110,7 @@ function renderResults() {
         <div class="score-summary">
             <p>Your Score: <span>${score}</span> / ${NUMBER_OF_QUESTIONS}</p>
             <p>Percentage: <span>${((score / NUMBER_OF_QUESTIONS) * 100).toFixed(1)}%</span></p>
-            <p>Result: ${score >= (NUMBER_OF_QUESTIONS * 0.5) ? 'PASS! 🎉' : 'FAIL... Keep practicing! 😕'}</p>
+            <p>Result: ${score >= (NUMBER_OF_QUESTIONS * 0.5) ? 'PASS! 🎉' : 'NOT ENOUGH... Keep practicing! 😕'}</p>
             <button id="retake-test">Retake Test (New Questions)</button>
         </div>
     `;
