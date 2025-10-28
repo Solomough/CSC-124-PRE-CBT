@@ -1568,4 +1568,382 @@ const allQuestions = [
         [cite_start]explanation: "The AST is a graphical representation of the formula's **structure**, not its truth value[cite: 26].",
     },
     {
-        topic: "Recursive 
+        topic: "Recursive Functions on PL",
+        question: "In the AST, which node represents the **main connective** of the entire formula?",
+        options: [
+            "The root of the tree.",
+            "The leftmost leaf.",
+            "The parent of the leaves.",
+            "The rightmost node."
+        ],
+        answer: "The root of the tree.",
+        [cite_start]explanation: "The internal nodes are the logical connectives, and the root is the main connective of the formula[cite: 26, 20].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If a function is defined recursively on a formula $\phi = \neg \phi_0$, the function value for $\phi$ depends on:",
+        options: [
+            "The values of the function for $\phi_0$ only.",
+            "The values of the function for all other formulae in $\mathcal{PL}$.",
+            "The truth values of $\phi$.",
+            "The size of $\phi$."
+        ],
+        answer: "The values of the function for $\phi_0$ only.",
+        explanation: "The recursive definition relies on the function's value for the immediate subformula(e). [cite_start]For negation, this is $\phi_0$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If a proof by structural induction requires proving the property for the Base Case $p$, where $p \in \mathcal{A}$, what must be true about the property?",
+        options: [
+            "The property must be related to the size of $p$.",
+            "The property must hold for all atomic formulae.",
+            "The property must be related to the number of connectives.",
+            "The property must be provable by contradiction."
+        ],
+        answer: "The property must hold for all atomic formulae.",
+        [cite_start]explanation: "The first step of structural induction is proving the property for all $\phi \in \mathcal{A}$[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "In the formal definition of the function $\text{prop}(\phi)$, the output set $2^{\mathcal{A}}$ represents:",
+        options: [
+            "The set of all propositional variables.",
+            "The power set of $\mathcal{A}$ (the set of all subsets of $\mathcal{A}$).",
+            "The natural numbers.",
+            "The set of all subformulae of $\phi$."
+        ],
+        answer: "The power set of $\mathcal{A}$ (the set of all subsets of $\mathcal{A}$).",
+        [cite_start]explanation: "The set $2^{\mathcal{A}}$ denotes the power set of $\mathcal{A}$ (the set of all subsets of $\mathcal{A}$), meaning $\text{prop}(\phi)$ is a set of propositional variables[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What is the size of the formula $\neg (p \land q)$?",
+        options: [
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        answer: "4",
+        [cite_start]explanation: "$\text{size}(\neg (p \land q)) = 1 + \text{size}(p \land q) = 1 + (1 + \text{size}(p) + \text{size}(q)) = 1 + (1 + 1 + 1) = 4$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "True or False: The construction tree notation and the Abstract Syntax Tree notation are two entirely different concepts.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        [cite_start]explanation: "The construction tree (Chapter 3) and the Abstract Syntax Tree (Chapter 4) are closely related ways to represent the derivation/structure of a formula[cite: 20, 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "The concept of an AST is generally important in computer science because it is the internal representation of what structure?",
+        options: [
+            "An electronic circuit.",
+            "A source program in a compiler.",
+            "A database schema.",
+            "A formal proof."
+        ],
+        answer: "A source program in a compiler.",
+        [cite_start]explanation: "ASTs are a fundamental concept in computer science (e.g., as the internal representation of a source program in a compiler)[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "A property $P$ of a formula $\phi$ is shown by structural induction. In the Inductive Step for $\phi = (\phi_1 \lor \phi_2)$, what is the goal?",
+        options: [
+            "To prove $P(\phi)$ from the assumption of $P(\phi_1 \lor \phi_2)$.",
+            "To prove $P(\phi)$ from the assumption of $P(\phi_1)$ and $P(\phi_2)$.",
+            "To prove $P(\phi_1)$ and $P(\phi_2)$ from the assumption of $P(\phi)$.",
+            "To prove the Base Case for $\phi_1$ and $\phi_2$."
+        ],
+        answer: "To prove $P(\phi)$ from the assumption of $P(\phi_1)$ and $P(\phi_2)$.",
+        [cite_start]explanation: "The Inductive Step requires showing that the property holds for the formula $\phi$ using the Inductive Hypothesis (which assumes the property holds for its subformulae, $\phi_1$ and $\phi_2$)[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If a formula $\phi$ has $\text{prop}(\phi) = \{p, q, r\}$, what can be concluded about the formula?",
+        options: [
+            "It is a conjunction of $p, q,$ and $r$.",
+            "It is an atomic formula.",
+            "It contains the propositional variables $p$, $q$, and $r$.",
+            "It is semantically equivalent to $p \land q \land r$."
+        ],
+        answer: "It contains the propositional variables $p$, $q$, and $r$.",
+        [cite_start]explanation: "The $\text{prop}$ function computes the set of propositional variables occurring in a formula[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Which type of mathematical proof is essential for demonstrating properties of sets defined by an inductive process, like $\mathcal{PL}$?",
+        options: [
+            "Proof by contradiction.",
+            "Proof by structural induction.",
+            "Proof by total ordering.",
+            "Proof by enumeration."
+        ],
+        answer: "Proof by structural induction.",
+        [cite_start]explanation: "Structural Induction is the principle used to prove properties of propositional formulae, which is an inductively defined set[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What is the smallest possible size of a molecular formula in $\mathcal{PL}$?",
+        options: [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        answer: "2",
+        explanation: "Molecular formulae are formed by the Inductive Steps. The simplest is a negation, e.g., $\neg p$. [cite_start]$\text{size}(\neg p) = 1 + \text{size}(p) = 2$[cite: 20, 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What does the $\land$ node in the AST of the formula $(p \land q)$ connect?",
+        options: [
+            "It connects $p$ to $q$.",
+            "It connects the subformulae $p$ and $q$.",
+            "It connects the truth values of $p$ and $q$.",
+            "It connects the formula to the root."
+        ],
+        answer: "It connects the subformulae $p$ and $q$.",
+        [cite_start]explanation: "The binary connective node connects its two immediate subformulae (children)[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\phi$ is a molecular formula, what is always true about its size?",
+        options: [
+            "$\text{size}(\phi) = 1$",
+            "$\text{size}(\phi) > 1$",
+            "$\text{size}(\phi) \le 1$",
+            "$\text{size}(\phi) = 3$"
+        ],
+        answer: "$\text{size}(\phi) > 1$",
+        [cite_start]explanation: "Atomic formulae have size 1. Molecular formulae are built using the Inductive Steps, increasing the size beyond 1 (minimum size is 2 for $\neg p$)[cite: 20, 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What is the set $\text{prop}(\neg \neg p)$?",
+        options: [
+            "$\{p\}$",
+            "$\emptyset$",
+            "$\{\neg, p\}$",
+            "$\{\neg \neg p\}$"
+        ],
+        answer: "$\{p\}$",
+        explanation: "The $\text{prop}$ function ignores negations. [cite_start]$\text{prop}(\neg \neg p) = \text{prop}(\neg p) = \text{prop}(p) = \{p\}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What would the $\rightarrow$ symbol represent in an extended AST for a logic that includes material implication?",
+        options: [
+            "An atomic formula.",
+            "A leaf node.",
+            "An internal node (connective).",
+            "A size function."
+        ],
+        answer: "An internal node (connective).",
+        [cite_start]explanation: "Logical connectives are represented by the internal nodes in the AST[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\text{size}(\phi) = 3$ and $\phi$ is a molecular formula, $\phi$ must be which of the following forms?",
+        options: [
+            "$\neg \neg p$",
+            "$(p \lor q)$",
+            "$(p \land p)$",
+            "All of the above."
+        ],
+        answer: "All of the above.",
+        explanation: "$\text{size}(\neg \neg p) = 1 + \text{size}(\neg p) = 1 + 2 = 3$. $\text{size}((p \lor q)) = 1 + 1 + 1 = 3$. $\text{size}((p \land p)) = 1 + 1 + 1 = 3$. [cite_start]Any binary connective applied to two atomic formulae results in a size of 3[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "True or False: The domain of the recursive functions $\text{size}$ and $\text{prop}$ is the set of words over $\mathcal{L}$ that are NOT in $\mathcal{PL}$.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        [cite_start]explanation: "The domain of these functions is the set of propositional formulae: $\text{size}: \mathcal{PL} \rightarrow \mathbb{N}$ and $\text{prop}: \mathcal{PL} \rightarrow 2^{\mathcal{A}}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "The structure of the Abstract Syntax Tree ensures that the formula is interpreted according to the rules of:",
+        options: [
+            "The object language ($\mathcal{PL}$).",
+            "The meta-language (English).",
+            "The truth assignment $\tau$.",
+            "Boolean algebra."
+        ],
+        answer: "The object language ($\mathcal{PL}$).",
+        [cite_start]explanation: "The AST formally represents the structure dictated by the rules of the object language $\mathcal{PL}$ (the inductive definition)[cite: 26, 18].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "In the AST for $\neg (p \land q)$, the $\neg$ is the root, and its child is the $\land$ node. What are the children of the $\land$ node?",
+        options: [
+            "The root and the formula.",
+            "The parentheses.",
+            "The leaves $p$ and $q$.",
+            "The formula itself."
+        ],
+        answer: "The leaves $p$ and $q$.",
+        [cite_start]explanation: "The $\land$ node is the main connective of the subformula $(p \land q)$, and its children are the atomic formulae (leaves) $p$ and $q$[cite: 26].",
+    },
+    // --- Chapter 5: Semantics of Propositional Logic (40 Questions) ---
+    {
+        topic: "Semantics of PL",
+        question: "A function $\tau: \mathcal{A} \rightarrow \mathbb{B}$ from the set of propositional variables to the set of Boolean truth values $\mathbb{B} = \{0, 1\}$ is called a(n):",
+        options: [
+            "Logical consequence.",
+            "Satisfiability check.",
+            "Boolean algebra.",
+            "Truth assignment."
+        ],
+        answer: "Truth assignment.",
+        [cite_start]explanation: "A truth assignment $\tau$ is a function $\tau: \mathcal{A} \rightarrow \mathbb{B}$, where $\mathbb{B} = \{0, 1\}$ (or $\{T, F\}$)[cite: 33].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "The truth value of a formula $\phi$ in an assignment $\tau$, denoted $\hat{\tau}(\phi)$, is computed recursively based on the laws of:",
+        options: [
+            "Set Theory.",
+            "Boolean Algebra.",
+            "First-Order Logic.",
+            "Structural Induction."
+        ],
+        answer: "Boolean Algebra.",
+        [cite_start]explanation: "The computation of $\hat{\tau}(\phi)$ relies on the operations defined in Boolean Algebra, where $1$ is true and $0$ is false[cite: 33].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi$ is a propositional variable $p \in \mathcal{A}$, what is the value of $\hat{\tau}(\phi)$?",
+        options: [
+            "1",
+            "0",
+            "$\tau(p)$",
+            "$\neg \tau(p)$"
+        ],
+        answer: "$\tau(p)$",
+        [cite_start]explanation: "If $\phi$ is a propositional variable $p \in \mathcal{A}$, then $\hat{\tau}(\phi) = \tau(p)$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi = \neg \phi_0$, the truth value $\hat{\tau}(\phi)$ is computed as:",
+        options: [
+            "$\hat{\tau}(\phi_0)$",
+            "$1 - \hat{\tau}(\phi_0)$",
+            "$\hat{\tau}(\phi_0) \cdot \hat{\tau}(\phi_0)$",
+            "$\hat{\tau}(\phi_0) + \hat{\tau}(\phi_0)$"
+        ],
+        answer: "$1 - \hat{\tau}(\phi_0)$",
+        [cite_start]explanation: "The truth value of a negation $\neg \phi_0$ is the opposite of $\phi_0$'s truth value: $\hat{\tau}(\neg \phi_0) = 1 - \hat{\tau}(\phi_0)$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi = (\phi_1 \land \phi_2)$, the truth value $\hat{\tau}(\phi)$ (conjunction) is computed as:",
+        options: [
+            "$\hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2)$",
+            "$\hat{\tau}(\phi_1) + \hat{\tau}(\phi_2)$",
+            "$1 - (\hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2))$",
+            "$\min(\hat{\tau}(\phi_1), \hat{\tau}(\phi_2))$"
+        ],
+        answer: "$\hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2)$",
+        [cite_start]explanation: "For conjunction, the truth value is the product (multiplication) of the component truth values, representing the Boolean AND operation: $\hat{\tau}(\phi_1 \land \phi_2) = \hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2)$[cite: 34].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi = (\phi_1 \lor \phi_2)$, the truth value $\hat{\tau}(\phi)$ (disjunction) is computed as:",
+        options: [
+            "$\hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2)$",
+            "$\hat{\tau}(\phi_1) + \hat{\tau}(\phi_2)$",
+            "$1 - ((1 - \hat{\tau}(\phi_1)) \cdot (1 - \hat{\tau}(\phi_2)))$",
+            "$\hat{\tau}(\phi_1) + \hat{\tau}(\phi_2) - (\hat{\tau}(\phi_1) \cdot \hat{\tau}(\phi_2))$"
+        ],
+        answer: "$1 - ((1 - \hat{\tau}(\phi_1)) \cdot (1 - \hat{\tau}(\phi_2)))$",
+        [cite_start]explanation: "The truth value for disjunction is defined as: $\hat{\tau}(\phi_1 \lor \phi_2) = 1 - ((1 - \hat{\tau}(\phi_1)) \cdot (1 - \hat{\tau}(\phi_2)))$[cite: 34]. (Note: This is equivalent to $1$ if either is $1$, and $0$ only if both are $0$).",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "We say that an assignment $\tau$ is a **model** of a formula $\phi$, written $\tau \models \phi$, if and only if:",
+        options: [
+            "$\hat{\tau}(\phi) = 0$.",
+            "$\hat{\tau}(\phi) = 1$.",
+            "$\phi$ is a propositional variable.",
+            "$\phi$ is a valid formula."
+        ],
+        answer: "$\hat{\tau}(\phi) = 1$.",
+        [cite_start]explanation: "We write $\tau \models \phi$ (and we read: $\tau$ is a model of the formula $\phi$; or: $\tau$ satisfies $\phi$) iff $\hat{\tau}(\phi) = 1$[cite: 36].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "A formula $\phi$ is **satisfiable** if, by definition:",
+        options: [
+            "It is true in every possible assignment.",
+            "It is false in every possible assignment.",
+            "There exists at least one assignment $\tau$ such that $\tau \models \phi$.",
+            "It is logically equivalent to $\neg \phi$."
+        ],
+        answer: "There exists at least one assignment $\tau$ such that $\tau \models \phi$.",
+        [cite_start]explanation: "A formula $\phi$ is satisfiable if, by definition, there exists at least an assignment $\tau$ such that $\tau \models \phi$ (i.e., if there exists at least a model of $\phi$)[cite: 36].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "A formula $\phi$ that is true in every possible assignment is called a **valid formula** or a(n):",
+        options: [
+            "Contradiction.",
+            "Satisfiable formula.",
+            "Tautology.",
+            "Inconsistent formula."
+        ],
+        answer: "Tautology.",
+        explanation: "A formula $\phi$ is valid if it is true in every possible assignment. [cite_start]Valid formulae are also called tautologies[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "A formula $\phi$ that is neither a tautology nor a contradiction is called a(n):",
+        options: [
+            "Consistent formula.",
+            "Contingent formula.",
+            "Equivalent formula.",
+            "Logical consequence."
+        ],
+        answer: "Contingent formula.",
+        [cite_start]explanation: "A formula $\phi$ is contingent if it is neither a tautology nor a contradiction[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "Two formulae $\phi_1$ and $\phi_2$ are **semantically equivalent**, written $\phi_1 \equiv \phi_2$, if:",
+        options: [
+            "They have the same Abstract Syntax Tree.",
+            "They have the same truth value in every assignment.",
+            "$\phi_1 \models \phi_2$ but $\phi_2 \not\models \phi_1$.",
+            "They are both satisfiable."
+        ],
+        answer: "They have the same truth value in every assignment.",
+        [cite_start]explanation: "Two formulae $\phi_1$ and $\phi_2$ are equivalent, written $\phi_1 \equiv \phi_2$, if they have the same truth value in every assignment[cite: 37].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "We say that $\phi$ is a **semantical consequence** of a set of formulae $\Gamma$, written $\Gamma \models \phi$, if:",
+        options: [
+            "$\Gamma \cup \{\phi\}$ is consistent.",
+            "Every model of $\Gamma$ is also a model of $\phi$.",
+            "Every model of $\phi$ is also a model of $\Gamma$.",
+            "$\phi$ is logically equivalent to a formula in $\Gamma$."
+        ],
+        answer: "Every model of $\Gamma$ is also a model of $\phi$.",
+        [cite_start]explanation: "A formula $\phi$ is a semantical consequence of a set of formulae $\Gamma$ (written $\Gamma \models \phi$) if every model of $\Gamma$ is also a model of $\phi$[cite: 38].",
+    },
+    {
+        topic: "Semantics of PL",
+        question: "If $\phi$ is a contradiction, which of the following is true?",
+        options: [
+            "$\phi$ is satisfiable.",
+            "$\neg \phi$ is a contradiction.",
+            "$\phi$ is valid.",
+            "$\phi$ is not satisfiable."
+        ],
+        answer: "$\phi$ is not satisfiable.",
+        [cite_start]explanation: "A contradiction is a formula that is false in ev
