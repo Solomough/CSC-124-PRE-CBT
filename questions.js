@@ -1173,4 +1173,399 @@ const allQuestions = [
         ],
         answer: "Inductive Case i: $\neg(p \lor q) \in \mathcal{PL}$.",
         [cite_start]explanation: "The last step in the construction tree for $\neg(p \lor q)$ is applying the negation rule (Inductive Case i) to the subformula $(p \lor q)$[cite: 19].",
-    
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The minimum number of symbols required to form a well-formed formula in $\mathcal{PL}$ is:",
+        options: [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        answer: "1",
+        [cite_start]explanation: "The Base Case states that any propositional variable (e.g., $p$), seen as a 1-symbol word, is in $\mathcal{PL}$[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "In the alphabet $\mathcal{L}$, which category of symbols consists of the two characters '(',')'?",
+        options: [
+            "Propositional variables.",
+            "Logical connectives.",
+            "Auxiliary symbols.",
+            "Truth values."
+        ],
+        answer: "Auxiliary symbols.",
+        [cite_start]explanation: "$\{(, )\}$ is the set of auxiliary symbols; in our case, it consists of two symbols called brakets[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which of the following is considered an $\mathcal{L}$ **word** but is **not** a formula in $\mathcal{PL}$?",
+        options: [
+            "$p$",
+            "$(p \lor q)$",
+            "))p \lor \land$",
+            "$\neg p$"
+        ],
+        answer: "))p \lor \land$",
+        [cite_start]explanation: "))p \lor \land$ is a sequence of symbols from $\mathcal{L}$ (a word) but clearly does not satisfy the rules of the inductive definition of $\mathcal{PL}$[cite: 18, 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the key difference between an **alphabet** and a **set** in this context?",
+        options: [
+            "An alphabet must be finite.",
+            "The alphabet's elements must be ordered.",
+            "There is no difference.",
+            "The intention matters—what we plan on doing with the elements."
+        ],
+        answer: "The intention matters—what we plan on doing with the elements.",
+        explanation: "What is the difference between an alphabet and a set? A priori, none. [cite_start]The intention matters – what we plan on doing with the elements of the set/alphabet[cite: 17].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the general name for a definition that specifies a set using Base Cases and Inductive Cases, along with a minimality constraint?",
+        options: [
+            "A formal definition",
+            "A recursive definition",
+            "An axiomatic definition",
+            "An inductive definition"
+        ],
+        answer: "An inductive definition",
+        [cite_start]explanation: "The definition of the set $\mathcal{PL}$ is an example of an inductive definition... In inductive definitions of sets, there are usually some base cases... and some inductive cases[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "If a formula $\phi$ is a disjunction, its main connective is:",
+        options: [
+            "$\neg$",
+            "$\land$",
+            "$\lor$",
+            "$\rightarrow$"
+        ],
+        answer: "$\lor$",
+        [cite_start]explanation: "If the main connective of a formula is a $\lor$, it is a disjunction[cite: 20].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "If $\phi$ is the word $p$, $\psi$ is the word $q$, and $\chi$ is the word $r$, which of the following is a well-formed formula in $\mathcal{PL}$?",
+        options: [
+            "$(p \land (q \lor r))$",
+            "$p \land q \lor r$",
+            "$(\neg p \rightarrow \chi)$",
+            "$\neg p \land q$"
+        ],
+        answer: "$(p \land (q \lor r))$",
+        explanation: "The formula $(p \lor (q \land r))$ is listed as an example of an element in $\mathcal{PL}$. [cite_start]The formula $(p \land (q \lor r))$ follows the same required recursive structure and full parenthesization[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "Which term is used by some authors for well-formed formulae ($\mathcal{PL}$)?",
+        options: [
+            "Atomic formulae",
+            "Molecular formulae",
+            "wff (well-formed formula)",
+            "Sequents"
+        ],
+        answer: "wff (well-formed formula)",
+        [cite_start]explanation: "Some authors prefer to use the terminology wff, but we will simply use formula by default in these lecture notes[cite: 18].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "In the inductive definition of $\mathcal{PL}$, the constraint that the set must be the 'smallest' one satisfying the conditions is called the:",
+        options: [
+            "Minimality Constraint.",
+            "Base Case.",
+            "Inductive Hypothesis.",
+            "Unique Readability."
+        ],
+        answer: "Minimality Constraint.",
+        [cite_start]explanation: "Another important part of an inductive definition is the minimality constraint[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "What is the consequence of having a definition of $\mathcal{PL}$ that lacks Unique Readability, such as the fictive definition where parentheses are omitted around disjunctions?",
+        options: [
+            "The proof system becomes unsound.",
+            "A formula could have two different construction trees (syntactic ambiguity).",
+            "The formula becomes unsatisfiable.",
+            "The set of propositional variables must be finite."
+        ],
+        answer: "A formula could have two different construction trees (syntactic ambiguity).",
+        explanation: "With this alternative, fictive, definition of $\mathcal{PL}$, the word $\neg p \lor q$ has two different construction trees. [cite_start]Such an ambiguity would be very troubling, because we would not know if $\neg p \lor q$ is a disjunction or a negation[cite: 22].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "The notation $\neg \neg p_1$ is an example of which type of formula?",
+        options: [
+            "An atomic formula.",
+            "A negation (whose subformula is also a negation).",
+            "A conjunction.",
+            "A predicate."
+        ],
+        answer: "A negation (whose subformula is also a negation).",
+        [cite_start]explanation: "The formula $\neg \neg p_1$ is a well-formed formula where the main connective is $\neg$, making it a negation[cite: 19].",
+    },
+    {
+        topic: "Formal Syntax",
+        question: "True or False: The use of a sans-serif blue font for $(p \land q)$ is a convention of the object language.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "True",
+        [cite_start]explanation: "To more easily differentiate between the two, we make the following convention: all elements in the object language are written in sans-serif blue font (for example, $(p \land q)$)[cite: 22].",
+    },
+    // --- Chapter 4: Functions Defined Recursively on PL (40 Questions) ---
+    {
+        topic: "Recursive Functions on PL",
+        question: "What is the purpose of the **Abstract Syntax Tree (AST)** of a formula?",
+        options: [
+            "To assign truth values to the formula.",
+            "To determine if the formula is valid.",
+            "To eliminate ambiguities and formally represent the structure of a formula.",
+            "To provide a physical model of the electronic circuit."
+        ],
+        answer: "To eliminate ambiguities and formally represent the structure of a formula.",
+        [cite_start]explanation: "The Abstract Syntax Tree of a formula is a graph that represents the structure of the formula... The Abstract Syntax Tree eliminates ambiguities[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "In an AST, what do the **leaves** of the tree represent?",
+        options: [
+            "The logical connectives.",
+            "The main connective of the formula.",
+            "The parentheses.",
+            "The propositional variables (atomic formulae)."
+        ],
+        answer: "The propositional variables (atomic formulae).",
+        [cite_start]explanation: "The leaves of the tree are the atomic formulae[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "In an AST, what do the **internal nodes** of the tree represent?",
+        options: [
+            "The truth values.",
+            "The logical connectives.",
+            "The construction proofs.",
+            "The assignment functions."
+        ],
+        answer: "The logical connectives.",
+        [cite_start]explanation: "The internal nodes are the logical connectives[cite: 26].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "The function $\text{size}: \mathcal{PL} \rightarrow \mathbb{N}$ computes what property of the Abstract Syntax Tree?",
+        options: [
+            "The height of the tree.",
+            "The number of nodes.",
+            "The number of leaves.",
+            "The number of connectives."
+        ],
+        answer: "The number of nodes.",
+        [cite_start]explanation: "The function $\text{size}: \mathcal{PL} \rightarrow \mathbb{N}$, computes the size of the abstract syntax tree of a formula (i.e., the number of nodes)[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Given a propositional variable $p \in \mathcal{A}$, what is the value of $\text{size}(p)$ according to its recursive definition?",
+        options: [
+            "0",
+            "1",
+            "2",
+            "$\text{size}(\neg p)$"
+        ],
+        answer: "1",
+        [cite_start]explanation: "In the recursive definition: $\text{size}(\phi) = 1$, if $\phi \in \mathcal{A}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\phi = \neg \phi_0$ and $\phi_0 \in \mathcal{PL}$, what is the recursive definition of $\text{size}(\phi)$?",
+        options: [
+            "$\text{size}(\phi_0)$",
+            "$1 + \text{size}(\phi_0)$",
+            "$1 + 2 \cdot \text{size}(\phi_0)$",
+            "$2^{\text{size}(\phi_0)}$"
+        ],
+        answer: "$1 + \text{size}(\phi_0)$",
+        [cite_start]explanation: "If $\phi = \neg \phi_0$, then $\text{size}(\phi) = 1 + \text{size}(\phi_0)$ (where the 1 is for the negation node)[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\phi = (\phi_1 \land \phi_2)$ and $\phi_1, \phi_2 \in \mathcal{PL}$, what is the recursive definition of $\text{size}(\phi)$?",
+        options: [
+            "$\text{size}(\phi_1) \cdot \text{size}(\phi_2)$",
+            "$1 + \text{size}(\phi_1) + \text{size}(\phi_2)$",
+            "$\text{size}(\phi_1) + \text{size}(\phi_2)$",
+            "$2 + \text{size}(\phi_1) + \text{size}(\phi_2)$"
+        ],
+        answer: "$1 + \text{size}(\phi_1) + \text{size}(\phi_2)$",
+        [cite_start]explanation: "If $\phi = (\phi_1 \land \phi_2)$, then $\text{size}(\phi) = 1 + \text{size}(\phi_1) + \text{size}(\phi_2)$ (where the 1 is for the conjunction node, and the parentheses are ignored for size)[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Compute the size of the formula $\neg p$ given that $\text{size}(p) = 1$.",
+        options: [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        answer: "2",
+        explanation: "The formula $\neg p$ is a negation of $p$. [cite_start]$\text{size}(\neg p) = 1 + \text{size}(p) = 1 + 1 = 2$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Compute the size of the formula $(p \lor q)$, given $\text{size}(p)=1$ and $\text{size}(q)=1$.",
+        options: [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        answer: "3",
+        explanation: "The formula $(p \lor q)$ is a disjunction. [cite_start]$\text{size}((p \lor q)) = 1 + \text{size}(p) + \text{size}(q) = 1 + 1 + 1 = 3$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "The function $\text{prop}: \mathcal{PL} \rightarrow 2^{\mathcal{A}}$ computes what property of a formula $\phi$?",
+        options: [
+            "The set of all subformulae of $\phi$.",
+            "The set of propositional variables occurring in $\phi$.",
+            "The set of all logical connectives in $\phi$.",
+            "The truth value of $\phi$."
+        ],
+        answer: "The set of propositional variables occurring in $\phi$.",
+        [cite_start]explanation: "The function $\text{prop}: \mathcal{PL} \rightarrow 2^{\mathcal{A}}$, computes the set of propositional variables occurring in a formula[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $p \in \mathcal{A}$, what is the value of $\text{prop}(p)$ according to its recursive definition?",
+        options: [
+            "$\emptyset$",
+            "$\{p\}$",
+            "$\mathcal{A}$",
+            "$\{p, \neg p\}$"
+        ],
+        answer: "$\{p\}$",
+        [cite_start]explanation: "In the recursive definition: $\text{prop}(\phi) = \{\phi\}$, if $\phi \in \mathcal{A}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\phi = \neg \phi_0$, what is the recursive definition of $\text{prop}(\phi)$?",
+        options: [
+            "$\{\neg\} \cup \text{prop}(\phi_0)$",
+            "$\text{prop}(\phi_0)$",
+            "$\text{prop}(\phi_0)^c$",
+            "$\emptyset$"
+        ],
+        answer: "$\text{prop}(\phi_0)$",
+        [cite_start]explanation: "If $\phi = \neg \phi_0$, then $\text{prop}(\phi) = \text{prop}(\phi_0)$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If $\phi = (\phi_1 \land \phi_2)$, what is the recursive definition of $\text{prop}(\phi)$?",
+        options: [
+            "$\text{prop}(\phi_1) \cap \text{prop}(\phi_2)$",
+            "$\text{prop}(\phi_1) \cup \text{prop}(\phi_2)$",
+            "$\text{prop}(\phi_1) \times \text{prop}(\phi_2)$",
+            "$\{\land\} \cup \text{prop}(\phi_1)$"
+        ],
+        answer: "$\text{prop}(\phi_1) \cup \text{prop}(\phi_2)$",
+        [cite_start]explanation: "If $\phi = (\phi_1 \land \phi_2)$, then $\text{prop}(\phi) = \text{prop}(\phi_1) \cup \text{prop}(\phi_2)$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Compute the set of propositional variables in $\text{prop}(\neg(p \lor \neg q))$.",
+        options: [
+            "$\{p\}$",
+            "$\{q\}$",
+            "$\{p, q\}$",
+            "$\{p, \neg q\}$"
+        ],
+        answer: "$\{p, q\}$",
+        explanation: "The $\neg$ does not affect the set of variables, and $\lor$ combines the sets. [cite_start]$\text{prop}(\neg(p \lor \neg q)) = \text{prop}(p \lor \neg q) = \text{prop}(p) \cup \text{prop}(\neg q) = \{p\} \cup \{q\} = \{p, q\}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What is the principle used to prove properties of propositional formulae based on the inductive definition of $\mathcal{PL}$?",
+        options: [
+            "Mathematical Induction.",
+            "Structural Induction.",
+            "Proof by Contradiction.",
+            "De Morgan's Laws."
+        ],
+        answer: "Structural Induction.",
+        [cite_start]explanation: "Proofs by Structural Induction are used to prove properties of propositional formulae[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "A structural induction proof on $\mathcal{PL}$ must contain which of the following cases?",
+        options: [
+            "A Base Case for atomic formulae.",
+            "An Inductive Hypothesis for subformulae.",
+            "Inductive Steps for $\neg$, $\land$, and $\lor$.",
+            "All of the above."
+        ],
+        answer: "All of the above.",
+        [cite_start]explanation: "A structural induction proof follows the structure of the inductive definition of $\mathcal{PL}$: Base Case (atomic formulae) and Inductive Steps (negation, conjunction, disjunction), with the Inductive Hypothesis applying to the subformulae[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "What does the **Inductive Hypothesis** state in a proof by structural induction?",
+        options: [
+            "The property holds for the formula $\phi$.",
+            "The property holds for the propositional variables.",
+            "The property holds for all subformulae (e.g., $\phi_0, \phi_1, \phi_2$) of the formula $\phi$.",
+            "The property leads to a contradiction."
+        ],
+        answer: "The property holds for all subformulae (e.g., $\phi_0, \phi_1, \phi_2$) of the formula $\phi$.",
+        [cite_start]explanation: "The general template for structural induction requires proving the property for the Base Case, then assuming the Inductive Hypothesis (that the property holds for subformulae), and finally proving the Inductive Steps[cite: 29].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "If a function is defined using the three clauses of the inductive definition of $\mathcal{PL}$ (Base Case and Inductive Steps), the function is called:",
+        options: [
+            "An axiomatic function.",
+            "A non-deterministic function.",
+            "A recursively defined function.",
+            "A constant function."
+        ],
+        answer: "A recursively defined function.",
+        [cite_start]explanation: "The functions (like size and prop) are defined recursively on $\mathcal{PL}$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "Compute the size of the formula $((p \land q) \lor r)$, given $\text{size}(p)=1, \text{size}(q)=1, \text{size}(r)=1$.",
+        options: [
+            "4",
+            "5",
+            "6",
+            "7"
+        ],
+        answer: "5",
+        explanation: "$\phi_1 = (p \land q)$, $\phi_2 = r$. $\text{size}(\phi_1) = 1 + \text{size}(p) + \text{size}(q) = 1 + 1 + 1 = 3$. [cite_start]$\text{size}(\phi) = 1 + \text{size}(\phi_1) + \text{size}(\phi_2) = 1 + 3 + 1 = 5$[cite: 28].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "The structure of the Abstract Syntax Tree (AST) is defined by the unique decomposition of the formula, which is guaranteed by which theorem?",
+        options: [
+            "The Replacement Theorem.",
+            "The Unique Readability Theorem.",
+            "De Morgan's Theorem.",
+            "The Soundness Theorem."
+        ],
+        answer: "The Unique Readability Theorem.",
+        [cite_start]explanation: "The structure of the Abstract Syntax Tree is well-defined only due to the Unique Readability Theorem[cite: 27].",
+    },
+    {
+        topic: "Recursive Functions on PL",
+        question: "True or False: The Abstract Syntax Tree is a graphical representation of the formula's truth value.",
+        options: [
+            "True",
+            "False"
+        ],
+        answer: "False",
+        [cite_start]explanation: "The AST is a graphical representation of the formula's **structure**, not its truth value[cite: 26].",
+    },
+    {
+        topic: "Recursive 
